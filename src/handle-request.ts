@@ -25,7 +25,7 @@ export default async function handleRequest(req: Request & { nextUrl?: URL }) {
   }
 
   const { pathname, search } = req.nextUrl ? req.nextUrl : new URL(req.url);
-  const url = new URL(pathname + search, "https://api.openai.com").href;
+  const url = new URL(pathname + search, "https://api.x.ai").href;
   const headers = pickHeaders(req.headers, ["content-type", "authorization"]);
 
   const res = await fetch(url, {
@@ -37,7 +37,7 @@ export default async function handleRequest(req: Request & { nextUrl?: URL }) {
   const resHeaders = {
     ...CORS_HEADERS,
     ...Object.fromEntries(
-      pickHeaders(res.headers, ["content-type", /^x-ratelimit-/, /^openai-/])
+      pickHeaders(res.headers, ["content-type", /^x-ratelimit-/, /^xai-/])
     ),
   };
 
