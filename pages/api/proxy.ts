@@ -2,7 +2,7 @@ import handleRequest from "../../src/handle-request";
 
 export const config = {
   runtime: "edge", // this is a pre-requisite
-  // exclude hongkong cause it's not supported by OpenAI
+  // exclude hongkong cause it's not supported by XAI
   regions: [
     "sin1",
     "cdg1",
